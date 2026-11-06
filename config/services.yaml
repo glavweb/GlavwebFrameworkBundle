@@ -1,0 +1,9 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Glavweb\FrameworkBundle\:
+        resource: '../src/'
+        exclude:
+            - '../src/Maker/'

@@ -1,0 +1,15 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        bind:
+            $entityNamespace: '%glavweb_framework.maker.entity_namespace%'
+
+    Glavweb\FrameworkBundle\Maker\MakeManager:
+        tags: ['maker.command']
+
+    Glavweb\FrameworkBundle\Maker\MakeRepository:
+        tags: ['maker.command']
+
+    Glavweb\FrameworkBundle\Maker\Helper\:
+        resource: '../src/Maker/Helper'

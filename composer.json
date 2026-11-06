@@ -1,0 +1,29 @@
+{
+    "name": "glavweb/framework-bundle",
+    "type": "symfony-bundle",
+    "description": "Framework helpers for Glavweb projects (DQL, makers, utils)",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrey Nilov",
+            "email": "nilov@glavweb.ru",
+            "homepage": "https://glavweb.ru"
+        },
+        {
+            "name": "Glavweb Community",
+            "homepage": "https://github.com/glavweb/GlavwebFrameworkBundle/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=8.4",
+        "glavweb/extra-bundle": "^1.0"
+    },
+    "suggest": {
+        "symfony/maker-bundle": "Required for make:manager and make:repository"
+    },
+    "autoload": {
+        "psr-4": {
+            "Glavweb\\FrameworkBundle\\": "src/"
+        }
+    }
+}
