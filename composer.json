@@ -16,10 +16,13 @@
     ],
     "require": {
         "php": ">=8.4",
-        "glavweb/extra-bundle": "^1.0"
+        "glavweb/extra-bundle": "^1.0",
+        "doctrine/orm": "^3.3",
+        "twig/twig": "^3.0"
     },
     "suggest": {
-        "symfony/maker-bundle": "Required for make:manager and make:repository"
+        "symfony/maker-bundle": "Required for make:manager and make:repository",
+        "gedmo/doctrine-extensions": "Required when using SortablePositionTrait"
     },
     "autoload": {
         "psr-4": {
