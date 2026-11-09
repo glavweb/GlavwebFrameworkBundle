@@ -1,0 +1,8 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Glavweb\FrameworkBundle\EventListener\CheckUserListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.response }

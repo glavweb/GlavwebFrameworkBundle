@@ -8,5 +8,6 @@ services:
         exclude:
             - '../src/Maker/'
             - '../src/Entity/'
+            - '../src/EventListener/CheckUserListener.php'
             - '../src/Enum/'
             - '../src/Filter/'

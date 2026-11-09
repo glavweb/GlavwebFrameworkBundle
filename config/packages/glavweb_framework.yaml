@@ -1,1 +1,2 @@
-# Maker defaults: entity_namespace=App\Entity\, admin_services_file=config/admin.yaml
+# Defaults: user_class=App\Entity\User\User (resolve_target_entities for UserEntityInterface),
+# check_user_listener=true, maker.entity_namespace=App\Entity\

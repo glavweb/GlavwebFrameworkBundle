@@ -18,7 +18,10 @@
         "php": ">=8.4",
         "glavweb/extra-bundle": "^1.0",
         "doctrine/orm": "^3.3",
-        "twig/twig": "^3.0"
+        "twig/twig": "^3.0",
+        "symfony/security-bundle": "^8.0",
+        "symfony/http-kernel": "^8.0",
+        "symfony/validator": "^8.0"
     },
     "suggest": {
         "symfony/maker-bundle": "Required for make:manager and make:repository",
