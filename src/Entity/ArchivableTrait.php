@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Provides an `archived_at` column for entities implementing Archivable.
  *
- * Optional `archivedBy` — add {@see ArchivedByTrait} next to this one.
+ * For archive + author use {@see ArchivedByAware} / {@see ArchivedByAwareTrait} (includes this trait).
  *
  * @author Andrey Nilov <nilov@glavweb.ru>
  */

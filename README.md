@@ -25,15 +25,15 @@ glavweb_framework:
 ## Archivable + archivedBy
 
 ```php
-use Glavweb\FrameworkBundle\Entity\Archivable;
-use Glavweb\FrameworkBundle\Entity\ArchivableTrait;
-use Glavweb\FrameworkBundle\Entity\ArchivedByTrait;
+use Glavweb\FrameworkBundle\Entity\ArchivedByAware;
+use Glavweb\FrameworkBundle\Entity\ArchivedByAwareTrait;
 
-class Article implements Archivable
+class Article implements ArchivedByAware // extends Archivable
 {
-    use ArchivableTrait;
-    use ArchivedByTrait; // ManyToOne → UserEntityInterface → user_class
+    use ArchivedByAwareTrait; // archivedAt + archivedBy → UserEntityInterface → user_class
 }
 ```
 
-`ArchiveManager::archive()` проставляет `archivedBy` текущим пользователем, если у сущности есть `setArchivedBy()`.
+Только дата без автора: `Archivable` + `ArchivableTrait`.
+
+`ArchiveManager::archive()` проставляет `archivedBy`, если сущность `instanceof ArchivedByAware`.

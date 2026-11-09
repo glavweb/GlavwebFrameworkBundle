@@ -7,13 +7,15 @@ namespace Glavweb\FrameworkBundle\Model;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Glavweb\FrameworkBundle\Entity\Archivable;
+use Glavweb\FrameworkBundle\Entity\ArchivedByAware;
+use Glavweb\FrameworkBundle\Entity\UserEntityInterface;
 use InvalidArgumentException;
 use Symfony\Bundle\SecurityBundle\Security;
 
 /**
  * Soft-archive helper for Archivable entities.
  *
- * If the entity has setArchivedBy(), the current security user is passed through.
+ * If the entity implements {@see ArchivedByAware}, the current security user is stored as archivedBy.
  *
  * @author Andrey Nilov <nilov@glavweb.ru>
  */
@@ -85,10 +87,10 @@ class ArchiveManager
 
     private function setArchivedByIfSupported(object $object, mixed $user): void
     {
-        if (!method_exists($object, 'setArchivedBy')) {
+        if (!$object instanceof ArchivedByAware) {
             return;
         }
 
-        $object->setArchivedBy($user);
+        $object->setArchivedBy($user instanceof UserEntityInterface ? $user : null);
     }
 }

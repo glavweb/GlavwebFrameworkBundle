@@ -10,7 +10,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * Minimal contract bundles rely on for the project User entity.
  *
  * Target of `doctrine.orm.resolve_target_entities` (see `glavweb_framework.user_class`) — associations
- * in shared traits (e.g. {@see ArchivedByTrait}) point to this interface instead of a concrete class.
+ * in shared traits (e.g. {@see ArchivedByAwareTrait}) resolve to the project User instead of a concrete class.
  * Passwords, tokens and lifecycle stay in the project (`App\Model\User\UserManager`).
  *
  * @author nilov <nilov@glavweb.ru>
