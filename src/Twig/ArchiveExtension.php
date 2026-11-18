@@ -48,16 +48,19 @@ class ArchiveExtension extends AbstractExtension
     }
 
     /**
-     * @param array<mixed> $object
+     * @param mixed $objects
      *
      * @return array<mixed>
      */
-    public function filterIsNotArchived(mixed $object): array
+    public function filterIsNotArchived(mixed $objects): array
     {
-        if (is_array($object)) {
-            return array_filter($object, [$this->archiveManager, 'isNotArchived']);
+        if (is_array($objects) || $objects instanceof \Traversable) {
+            return array_filter(
+                is_array($objects) ? $objects : iterator_to_array($objects),
+                [$this->archiveManager, 'isNotArchived']
+            );
         }
 
-        throw new InvalidArgumentException('notArchived filter expects an array.');
+        throw new InvalidArgumentException('notArchived filter expects an array or a Traversable.');
     }
 }
